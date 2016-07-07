@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manaós Print - OS Generator</title>
+
+    <script src="jquery-1.2.6.pack.js"></script>
+    <script src="jquery.maskedinput-1.1.4.pack.js" type="text/javascript"></script>
+
+
+
+    <script>
+        jQuery(function($){
+            $("#campoCelular").mask("(99) 9 9999-9999");
+            $("#campoTelefone").mask("(99) 9999-9999");
+            $("#campoCnpj").mask("99.999.999/9999.99");
+        });
+    </script>
+</head>
+
+<body>
+
+<form method="post" action="mainOsGen.php">
+    <fieldset id="os">
+        <legend>GERAR OS</legend>
+
+        <h2>Contato do Cliente</h2>
+        <p>Cliente:  <input type="text" name="clientname" id="iname" placeholder="Nome do Cliente/Empresa"/></p>
+        <p>CNPJ: <input type="text" name="cnpj" id="campoCnpj"/> </p>
+        <p>e-mail: <input type="text" name="email" id="campoEmail" placeholder="cliente@empresa.com.br"/> </p>
+        <p>Telefone: <input type="text" name="telefone" id="campoTelefone" /></p>
+        <p>Celular: <input type="text" name="celular" id="campoCelular" /></p>
+
+        <h2>Servicos solicitados</h2>
+
+        <input type="checkbox" name="impboleto" >Impressão de Boletos -
+        Quantidade: <input type="number" name="qntBoleto" id="qntBoleto" placeholder="Qnt de boletos solicitados"/><br/>
+        <input type="checkbox" name="impHolerite">Impressão de Holerites -
+        Quantidade: <input type="number" name="qntHolerite" id="qntHolerite" placeholder="Qnt de Holerites solicitados"/><br/>
+
+
+    </fieldset>
+    <br/><input type="submit" value="Gerar OS">
+</form>
+
+</body>
+</html>
